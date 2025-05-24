@@ -1,0 +1,175 @@
+
+
+/* Fullscreen & no scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('img1.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Navigation (unchanged) */
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+}
+
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 100%;
+  background: transparent;
+  margin: auto;
+}
+
+nav .navbar .logo a {
+  color: whitesmoke;
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav .navbar .menu {
+  display: flex;
+}
+
+.navbar .menu li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Subtle grid overlay */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content container with entrance animation */
+.content {
+  z-index: 10;
+  max-width: 90vw;
+  user-select: none;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elegant text with skyblue edge glow */
+h1.glitch {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  letter-spacing: -1px;
+  text-shadow: 
+    0 0 10px rgba(135, 206, 235, 0.8),
+    0 0 20px rgba(135, 206, 235, 0.5),
+    0 0 30px rgba(135, 206, 235, 0.3);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: 
+    textReveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    glowPulse 4s ease-in-out infinite alternate;
+  animation-delay: 0.5s;
+}
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  to {
+    text-shadow: 
+      0 0 15px rgba(135, 206, 235, 1),
+      0 0 25px rgba(135, 206, 235, 0.7),
+      0 0 35px rgba(135, 206, 235, 0.4);
+  }
+}
+
+/* Description paragraph with staggered entrance */
+p.description {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  text-shadow: 
+    0 0 8px rgba(135, 206, 235, 0.5),
+    0 0 15px rgba(135, 206, 235, 0.2);
+}
+
+/* Download button (unchanged) */
+.download-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  background: whitesmoke;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  z-index: 9;
+  box-shadow: 0 0 20px skyblue;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+  color: white;
+}
+
+.download-btn a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

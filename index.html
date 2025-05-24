@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChaosVPN - Free Unlimited Internet</title>
+  <link rel="stylesheet" href="t2.css">
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">𝑫𝑬𝑭𝑪</a></div>
+      <ul class="menu">
+        <li><a href="e7.html">Home</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="scanlines"></div>
+  <div class="glitch-overlay"></div>
+  
+  <div class="content">
+    <h1 class="glitch" data-text="ChaosVPN">ChaosVPN</h1>
+    <p class="description">Free internet. No limits. One click away.</p>
+  </div>
+
+  <button class="download-btn">
+    <a href="e7.html">Continue..</a>
+  </button>
+
+  <script>
+    // This script ensures links work properly
+    document.addEventListener('DOMContentLoaded', function() {
+      // Prevent default behavior only for hash links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // For all other links, ensure they work normally
+      document.querySelectorAll('a:not([href^="#"])').forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Let the link work normally
+        });
+      });
+    });
+  </script>
+</body>
+</html>
